@@ -1,0 +1,29 @@
+[project]
+name = "cw-parq-converter"
+version = "1.1.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.12.11"
+dependencies = [
+    "numpy>=2.3.3",
+    "pandas>=2.3.3",
+    "pendulum>=3.1.0",
+    "pyarrow>=21.0.0",
+    "pydantic>=2.12.0",
+    "pyyaml>=6.0.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parquet_converter"]
+
+[dependency-groups]
+dev = [
+    "awscli>=1.36.27",
+    "black>=25.9.0",
+    "isort>=6.1.0",
+    "pre-commit>=4.3.0",
+]

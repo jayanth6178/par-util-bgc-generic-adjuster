@@ -1,0 +1,19 @@
+{
+  "schema": {
+    "1": {"name": "sym", "type": "string", "column_operation": "source_required", "nullable": true},
+    "2": {"name": "time", "type": "string", "column_operation": "source_required", "nullable": true},
+    "3": {"name": "brand", "type": "string", "column_operation": "source_required", "nullable": true},
+    "4": {"name": "assetClass", "type": "string", "column_operation": "source_required", "nullable": true},
+    "5": {"name": "subAssetClass", "type": "string", "column_operation": "source_required", "nullable": true},
+    "6": {"name": "isin", "type": "string", "column_operation": "source_required", "nullable": true},
+    "7": {"name": "country", "type": "string", "column_operation": "source_required", "nullable": true},
+    "8": {"name": "description", "type": "string", "column_operation": "source_required", "nullable": true},
+    "9": {"name": "coupon", "type": "double", "column_operation": "source_required", "nullable": true},
+    "10": {"name": "maturity", "type": "string", "column_operation": "source_required", "nullable": true},
+    "11": {"name": "mid", "type": "double", "column_operation": "source_required", "nullable": true},
+    "12": {"name": "changeOnDay", "type": "double", "column_operation": "source_required", "nullable": true},
+    "13": {"name": "referenceDesc", "type": "string", "column_operation": "source_required", "nullable": true},
+    "14": {"name": "referenceDeliveryDate", "type": "string", "column_operation": "source_required", "nullable": true},
+    "15": {"name": "referenceExpiryDate", "type": "string", "column_operation": "source_required", "nullable": true}
+  }
+}

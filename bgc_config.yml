@@ -1,0 +1,36 @@
+administrator: 'base_administrators.ParquetConverterAdministrator'
+
+input:
+  reader: 'pyarrow_readers.PyArrowCsvReader'
+  file_type: 'date'
+  options:
+    read_options:
+      skip_rows: 1
+    parse_options:
+      delimiter: ","
+    convert_options:
+      timestamp_parsers: ["%d-%b-%Y %H:%M:%S"]
+
+output:
+  writer: 'pyarrow_writers.PyArrowParquetWriter'
+  adjuster: 'fenics_metadata_adjusters.FenicsBGCMetadataAdjuster'
+  basedir: '/sf/cw/common/user/jayanth/bgc/'
+  file_template: '1.0/raw_enriched/{YYYY}/{YYYYMMDD}/{YYYYMMDD}.{table}.parq'
+  metadata:
+    standard_metadata: True
+    knowledge_time:
+      from: 'csv_header'
+      tz: 'UTC'
+      header_line: 1
+      header_pattern: '"CREATE_DATETIME:","([^"]+)"'
+
+manifest:
+  file_template: "1.0/raw_enriched/manifest/{table}.manifest.json"
+  auto_detect_sample_size: 20
+
+tables:
+  bgc_govt_bonds:
+    raw_files: ['/mnt/mktdata/FENICS/BGC_GOVT_BONDS_BASIS/EGB/{YYYY}/{MM}/{DD}/BGC_GOVT_BONDS_BASIS_EGB_EOD_{YYYYMMDD}.csv']
+    aggregate: false
+
+extract_vars: null
